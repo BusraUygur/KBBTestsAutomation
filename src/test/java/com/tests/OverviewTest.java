@@ -1,9 +1,12 @@
 package com.tests;
 
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
 
-public class OverviewTest {
+import com.utilities.Driver;
+import com.utilities.TestBase;
+
+public class OverviewTest extends TestBase {
 
 //	@FindBy(xpath="//a[@class='logo-home-link']")
 //	public WebElement name;
@@ -11,4 +14,10 @@ public class OverviewTest {
 //	public boolean findTitle() {
 //		return true;
 //	}
+	private static WebDriver driver;
+
+	public OverviewTest() {
+		this.driver = Driver.getDriver();
+		PageFactory.initElements(driver, this);
+	}
 }

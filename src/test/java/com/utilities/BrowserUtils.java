@@ -86,14 +86,14 @@ public class BrowserUtils {
 		driver.switchTo().window(origin);
 	}
 
-	public static List<String> getElementsText(By locator) {
-		List<WebElement> elems = driver.findElements(locator);
-		List<String> elemTexts = new ArrayList<>();
-		for (WebElement el : elems) {
-			if (!el.getText().isEmpty()) {
-				elemTexts.add(el.getText());
-			}
-		}
-		return elemTexts;
-	}
+//	public static List<String> getElementsText(By locator) {
+//		List<WebElement> elems = driver.findElements(locator);
+//		List<String> elemTexts = new ArrayList<>();
+//		for (WebElement el : elems) {
+//			if (!el.getText().isEmpty()) {
+//				elemTexts.add(el.getText());
+//			}
+//		}
+//		return elemTexts;
+//	}
 }
