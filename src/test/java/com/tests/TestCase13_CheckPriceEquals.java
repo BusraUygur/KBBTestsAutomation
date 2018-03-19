@@ -37,43 +37,47 @@ public class TestCase13_CheckPriceEquals extends TestBase {
 
 		list = homepage.selectModel;
 		select = new Select(list);
-		select.selectByIndex(2);
+		select.selectByIndex(1);
 		Thread.sleep(3000);
-		
-		 list = homepage.selectYear;
-		 select = new Select(list);
-		 select.selectByIndex(2);
-		 Thread.sleep(3000);
-		
-		 list = homepage.selectTrim;
-		 select = new Select(list);
-		 select.selectByIndex(2);
-		 Thread.sleep(3000);
-		
-		 homepage.compareCars.click();
-		 Thread.sleep(2000);
-		
-		 homepage.overviewAndPricingButton.click();
-		 Thread.sleep(2000);
-		
-		 WebElement fr = homepage.surveyIframe;
-		 driver.switchTo().frame(fr);
-		
-		 WebElement elem = homepage.noThanks;
-		 elem.click();
-		 Thread.sleep(2000);
-		
-		
+
+		list = homepage.selectYear;
+		select = new Select(list);
+		select.selectByIndex(1);
+		Thread.sleep(3000);
+
+		list = homepage.selectTrim;
+		select = new Select(list);
+		select.selectByIndex(1);
+		Thread.sleep(3000);
+
+		homepage.add.click();
+		Thread.sleep(2000);
+
+		homepage.overviewAndPricingButton.click();
+		Thread.sleep(2000);
+
+		WebElement fr = homepage.surveyIframe;
+		driver.switchTo().frame(fr);
+
+		WebElement elem = homepage.noThanks;
+		elem.click();
+		Thread.sleep(2000);
+
 		// Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"RangeBox\"]/text[2]")).isDisplayed());
-		//
-		// jsEX.executeScript("window.scrollBy(0,1000);");
-		// Thread.sleep(2000);
-		//
-		// WebElement e1 = driver.findElement(By.xpath("//td[@id='configuredPrice']"));
-		// Thread.sleep(2000);
+
+		jsEX.executeScript("window.scrollBy(0,1000);");
+		Thread.sleep(2000);
+
+		WebElement e1 = driver.findElement(By.xpath("//td[@id='configuredPrice']"));
+		Thread.sleep(2000);
 		// WebElement e2 = driver.findElement(By.linkText("$49,882"));
 		// Assert.assertEquals(e1, e2);
 
+		WebElement iframe = driver.findElement(By.id("PriceAdvisorFrame"));
+		driver.switchTo().frame(iframe);
+		
+		
+		
 	}
 
 }
