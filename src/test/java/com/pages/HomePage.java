@@ -55,7 +55,11 @@ public class HomePage {
 	@FindBy(xpath = "//a[contains(text(),'No Thanks')]")
 	public WebElement noThanks;
 	
+	@FindBy(xpath="//a[@id='navToCarValues']")
+	public WebElement carValues;
 	
+	@FindBy(xpath="//a[@id='navToCarValuesnavToNewUsedCarPrices']")
+	public WebElement newAndUsedCarPrices;
 	
 	
 	
