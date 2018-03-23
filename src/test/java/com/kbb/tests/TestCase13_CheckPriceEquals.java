@@ -1,6 +1,5 @@
 package com.kbb.tests;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -55,13 +54,14 @@ public class TestCase13_CheckPriceEquals extends TestBase {
 		homepage.add.click();
 		Thread.sleep(2000);
 		
-//		try {
-//			WebElement iframe1 = driver.findElement(By.linkText("We'd welcome your feedback!"));
-//			driver.switchTo().frame(iframe1);
-//		}catch(Exception e) {
-//			driver.findElement(By.linkText("//a[@class='fsrDeclineButton']"));
-//			Thread.sleep(2000);
-//		}
+
+//		WebElement fr = homepage.frame;
+//		driver.switchTo().frame(fr);
+//		Thread.sleep(2000);
+//
+//		fr = homepage.frameDeclineButton;
+//		fr.click();
+//		Thread.sleep(2000);
 
 		homepage.overviewAndPricingButton.click();
 		Thread.sleep(2000);
@@ -75,30 +75,29 @@ public class TestCase13_CheckPriceEquals extends TestBase {
 		driver.switchTo().frame(fr);
 		Thread.sleep(2000);
 
-		WebElement elem = homepage.noThanks;
-		elem.click();
+		fr = homepage.noThanks;
+		fr.click();
 		Thread.sleep(2000);
 
 		jsEX.executeScript("window.scrollBy(0,1000);");
 		Thread.sleep(2000);
-
-		WebElement e1 = driver.findElement(By.xpath("//td[@id='configuredPrice']"));
-		Thread.sleep(2000);
-		// WebElement e2 = driver.findElement(By.linkText("$49,882"));
-		// Assert.assertEquals(e1, e2);
-
+		
 		WebElement totalFairPurchase = homepage.totalFairPurchasePrice;
 		System.out.println(totalFairPurchase.getText());
 		
-//		driver.switchTo().frame(totalFairPurchase);
-//		WebDriverWait wait=new WebDriverWait(driver, 5);
-//		wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//*[@id=\"RangeBox\"]"))));
-//		String price=driver.findElement(By.xpath("//*[@id=\"RangeBox\"]")).getText();
-//		System.out.println(price);
+		jsEX.executeScript("window.scrollBy(0,-1000);");
+//		WebDriverWait wait=new WebDriverWait(driver, 10);
+//		WebElement frameFairPurchase = homepage.frameFairPurchasePrice;
+//		wait.until(ExpectedConditions.visibilityOf(frameFairPurchase));
+//		
+//		System.out.println(frameFairPurchase.getText());
+//		Assert.assertEquals(totalFairPurchase.getText(), frameFairPurchase.getText());
+		
+		
 
 		
 		
-		
+	
 	}
 
 }
