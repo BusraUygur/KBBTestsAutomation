@@ -50,7 +50,7 @@ public class TestCase13_CheckPriceEquals extends TestBase {
 		select.selectByIndex(1);
 		Thread.sleep(3000);
 
-		homepage.add.click();
+		//homepage.add.click();
 		Thread.sleep(2000);
 
 		homepage.overviewAndPricingButton.click();
