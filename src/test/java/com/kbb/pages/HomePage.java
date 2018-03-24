@@ -85,7 +85,24 @@ public class HomePage {
 	@FindBy(xpath = "//td[@id='configuredPrice']")
 	public WebElement totalFairPurchasePrice;
 	
-		
+	@FindBy(xpath = "(//*[@text-anchor='middle'])[1]")
+	public WebElement frameFairPurchasePrice;
+	//*[@text-anchor='middle'][@font-size='14'][@font-weight='700'])[1]
+	
+	
+	
+//	@FindBy(xpath = "//div[@class='fsrInvite']")
+//	public WebElement frame;
+//		
+//	@FindBy(xpath = "//a[@class='fsrDeclineButton']")
+//	public WebElement frameDeclineButton;
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
